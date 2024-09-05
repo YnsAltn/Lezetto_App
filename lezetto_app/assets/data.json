@@ -1,0 +1,78 @@
+{
+  "name": "Karnıyarık",
+  "category": "Ana Yemek",
+  "image": "https://esenler.bel.tr/wp-content/uploads/2022/03/karniyarik-1-960x720.jpg",
+  "prep_time": "20 dakika",
+  "cook_time": "40 dakika",
+  "difficulty": "Orta",
+  "calories": 350,
+  "servings": 4,
+  "ingredients": [
+    {
+      "name": "Patlıcan",
+      "quantity": 4,
+      "unit": "adet"
+    },
+    {
+      "name": "Kıyma",
+      "quantity": 200,
+      "unit": "gram"
+    },
+    {
+      "name": "Soğan",
+      "quantity": 1,
+      "unit": "adet"
+    },
+    {
+      "name": "Domates salçası",
+      "quantity": 2,
+      "unit": "yemek kaşığı"
+    },
+    {
+      "name": "Sarımsak",
+      "quantity": 2,
+      "unit": "diş"
+    },
+    {
+      "name": "Domates",
+      "quantity": 2,
+      "unit": "adet"
+    },
+    {
+      "name": "Yeşil biber",
+      "quantity": 2,
+      "unit": "adet"
+    },
+    {
+      "name": "Zeytinyağı",
+      "quantity": 3,
+      "unit": "yemek kaşığı"
+    },
+    {
+      "name": "Tuz",
+      "quantity": 1,
+      "unit": "çay kaşığı"
+    },
+    {
+      "name": "Karabiber",
+      "quantity": 0.5,
+      "unit": "çay kaşığı"
+    }
+  ],
+  "instructions": [
+    "Fırını 180°C'ye (350°F) ısıtın.",
+    "Patlıcanları uzunlamasına ikiye kesin ve içini biraz oyun.",
+    "Bir tavada zeytinyağını ısıtın ve doğranmış soğan ve sarımsağı yumuşayana kadar soteleyin.",
+    "Kıymayı ekleyin ve kahverengileşene kadar pişirin.",
+    "Domates salçası, doğranmış domates ve yeşil biberleri ekleyin. 5 dakika daha pişirin.",
+    "Tuz ve karabiber ile tatlandırın.",
+    "Patlıcanları kıyma karışımı ile doldurun ve bir fırın tepsisine yerleştirin.",
+    "Önceden ısıtılmış fırında 40 dakika pişirin, patlıcanlar yumuşayana kadar.",
+    "Sıcak servis yapın."
+  ],
+  "nutrition": {
+    "carbohydrates": "20g",
+    "protein": "15g",
+    "fat": "25g"
+  }
+}
