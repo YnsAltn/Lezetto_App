@@ -1,19 +1,20 @@
 import 'package:flutter/material.dart';
-import '../components/bottomNavBar.dart'; // Import your BottomNavBar widget
-import '../components/favorites_manager.dart';
-import '../model/recipe_model.dart'; // Assuming the Recipe model is here
-import 'detailPage.dart';
+import '../../components/bottomNavBar.dart';
+import '../../model/recipe_model.dart';
+import '../detailPage.dart';
+import 'favorites_manager.dart';
 
-class ListPage extends StatelessWidget {
+class FavoritePage extends StatefulWidget {
+  @override
+  _FavoritePageState createState() => _FavoritePageState();
+}
+
+class _FavoritePageState extends State<FavoritePage> {
   @override
   Widget build(BuildContext context) {
-    // Get the list of favorite recipes
     List<Recipe> favoriteRecipes = FavoritesManager.getFavorites();
 
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Favoriler'),
-      ),
       body: favoriteRecipes.isNotEmpty
           ? ListView.builder(
         itemCount: favoriteRecipes.length,
@@ -26,29 +27,24 @@ class ListPage extends StatelessWidget {
         child: Text('Favori tarifler bulunamadı'),
       ),
       bottomNavigationBar: BottomNavBar(
-        selectedIndex: 1, // Index of the Favorites tab
+        selectedIndex: 1,
         onItemTapped: (index) {
-          // Handle navigation between tabs
           if (index == 0) {
-            Navigator.pushReplacementNamed(context, '/'); // Navigate to Home
+            Navigator.pushReplacementNamed(context, '/');
           } else if (index == 1) {
-            // Stay on the Favorites tab
           }
-          // Add more tabs if needed
         },
       ),
     );
   }
 
-  // This function builds the recipe card for the favorite recipes
   Widget _buildFavoriteRecipeCard(Recipe recipe, BuildContext context) {
     return GestureDetector(
       onTap: () {
-        // Handle navigation to detail page or action
         Navigator.push(
           context,
           MaterialPageRoute(
-            builder: (context) => DetailPage(recipe: recipe), // Assuming you have a detail page
+            builder: (context) => DetailPage(recipe: recipe),
           ),
         );
       },
@@ -105,8 +101,10 @@ class ListPage extends StatelessWidget {
             IconButton(
               icon: Icon(Icons.favorite, color: Colors.red),
               onPressed: () {
-                // Optional: Add functionality to remove from favorites if needed
-                FavoritesManager.toggleFavorite(recipe);
+                setState(() {
+                  FavoritesManager.toggleFavorite(recipe);
+                });
+
                 ScaffoldMessenger.of(context).showSnackBar(SnackBar(
                   content: Text('${recipe.name} favorilerden kaldırıldı.'),
                 ));

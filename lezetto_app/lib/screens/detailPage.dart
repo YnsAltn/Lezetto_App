@@ -19,7 +19,7 @@ class _DetailPageState extends State<DetailPage> {
   @override
   void initState() {
     super.initState();
-    servings = widget.recipe.servings; // JSON'dan gelen servings değeri
+    servings = widget.recipe.servings;
     scaledIngredients = widget.recipe.ingredients.map((ingredient) {
       return Ingredient(
         name: ingredient.name,
@@ -127,14 +127,12 @@ class _DetailPageState extends State<DetailPage> {
                             IconButton(
                               icon: Icon(Icons.favorite_border, color: Colors.deepOrange),
                               onPressed: () {
-                                // Kaydet butonunun işlevi
                               },
                             ),
                             SizedBox(width: 8.0),
                             IconButton(
                               icon: Icon(Icons.share, color: Colors.deepOrange),
                               onPressed: () {
-                                // Paylaş butonunun işlevi
                               },
                             ),
                           ],
@@ -200,7 +198,6 @@ class _DetailPageState extends State<DetailPage> {
                             IconButton(
                               icon: Icon(Icons.add),
                               onPressed: () {
-                                // Listeye ekleme işlevi
                               },
                             ),
                             Expanded(
@@ -215,8 +212,7 @@ class _DetailPageState extends State<DetailPage> {
                                     TextSpan(
                                         text: '${ingredient.unit} ${ingredient.name}',
                                         style: const TextStyle(
-                                            fontWeight: FontWeight.normal)),
-                                  ],
+                                            fontWeight: FontWeight.normal)),                                  ],
                                 ),
                               ),
                             ),

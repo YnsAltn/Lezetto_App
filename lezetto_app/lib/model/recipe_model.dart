@@ -41,8 +41,8 @@ class Recipe {
       prepTime: json['prep_time'],
       cookTime: json['cook_time'],
       difficulty: json['difficulty'],
-      calories: (json['calories'] as num).toInt(), // Dönüştür
-      servings: (json['servings'] as num).toInt(), // Dönüştür
+      calories: (json['calories'] as num).toInt(),
+      servings: (json['servings'] as num).toInt(),
       ingredients: ingredientList,
       instructions: instructionList,
       nutrition: nutritionData,
@@ -51,7 +51,7 @@ class Recipe {
 }
 class Ingredient {
   final String name;
-  final double quantity; // Burada int yerine double kullanıyoruz.
+  final double quantity;
   final String unit;
 
   Ingredient({
@@ -63,7 +63,7 @@ class Ingredient {
   factory Ingredient.fromJson(Map<String, dynamic> json) {
     return Ingredient(
       name: json['name'],
-      quantity: (json['quantity'] as num).toDouble(), // Dönüştür
+      quantity: (json['quantity'] as num).toDouble(),
       unit: json['unit'],
     );
   }

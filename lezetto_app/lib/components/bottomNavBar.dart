@@ -30,7 +30,7 @@ class BottomNavBar extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Icon(
-                    [Icons.home, Icons.search, Icons.person, Icons.settings, Icons.more_horiz][index],
+                    [Icons.home, Icons.soup_kitchen, Icons.search, Icons.receipt, Icons.shopping_bag_outlined][index],
                     color: isSelected ? Colors.white : Colors.black,
                   ),
                   if (isSelected)
@@ -38,7 +38,7 @@ class BottomNavBar extends StatelessWidget {
                   if (isSelected)
                     Flexible(
                       child: Text(
-                        ['Anasayfa', 'Arama', 'Profil', 'Ayarlar', 'Dahası'][index],
+                        ['Anasayfa', 'Mutfak', 'Arama', 'Tariflerim', 'A. Listesi'][index],
                         style: const TextStyle(color: Colors.white),
                         overflow: TextOverflow.ellipsis,
                         textAlign: TextAlign.center,

@@ -1,16 +1,16 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart' show rootBundle;
-import '../components/favorites_manager.dart';
 import '../model/recipe_model.dart';
 import 'detailPage.dart';
+import 'favorite_page/favorites_manager.dart';
 
-class MainScreen extends StatefulWidget {
+class HomePage extends StatefulWidget {
   @override
-  _MainScreenState createState() => _MainScreenState();
+  _HomePageState createState() => _HomePageState();
 }
 
-class _MainScreenState extends State<MainScreen> {
+class _HomePageState extends State<HomePage> {
   late Future<List<Recipe>> _recipesFuture;
 
   @override

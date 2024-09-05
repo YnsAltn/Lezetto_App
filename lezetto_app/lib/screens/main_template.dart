@@ -1,24 +1,27 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_demo/screens/recipes_page.dart';
+import 'package:flutter_demo/screens/favorite_page/favorite_page.dart';
+import 'package:flutter_demo/screens/kitchen_page.dart';
+import 'package:flutter_demo/screens/search_page.dart';
+import 'package:flutter_demo/screens/shopping_page.dart';
 import '../components/appBar.dart';
 import '../components/bottomNavBar.dart';
 import '../components/sideBar.dart';
-import 'mainScreen.dart';
+import 'home_page.dart';
 
-class HomePage extends StatefulWidget {
+class MainTemplate extends StatefulWidget {
   @override
-  _HomePageState createState() => _HomePageState();
+  _MainTemplateState createState() => _MainTemplateState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _MainTemplateState extends State<MainTemplate> {
   int _selectedIndex = 0;
 
   final List<Widget> _pages = [
-    MainScreen(), // MainScreen burada çağrılır
-    ListPage(),
-    Center(child: Text('Kitchen Page')),
-    Center(child: Text('List Page')),
-    Center(child: Text('Recipes Page')),
+    HomePage(),
+    KitchenPage(),
+    SearchPage(),
+    FavoritePage(),
+    ShoppingPage(),
   ];
 
   void _onItemTapped(int index) {
