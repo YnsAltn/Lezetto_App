@@ -74,7 +74,7 @@ class _HomePageState extends State<HomePage> {
         Navigator.push(
           context,
           MaterialPageRoute(
-            builder: (context) => DetailPage(recipe: recipe),
+            builder: (context) => DetailPage(recipeId: recipe.id),
           ),
         );
       },
@@ -134,7 +134,7 @@ class _HomePageState extends State<HomePage> {
               FavoritesManager.toggleFavorite(recipe);
             });
           },
-        ),
+        )
       ],
     );
   }

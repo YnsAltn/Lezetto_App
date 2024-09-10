@@ -1,5 +1,6 @@
 [
   {
+    "id": 1,
     "name": "Karnıyarık",
     "category": "Ana Yemek",
     "image": "https://esenler.bel.tr/wp-content/uploads/2022/03/karniyarik-1-960x720.jpg",
@@ -38,6 +39,7 @@
     }
   },
   {
+    "id": 2,
     "name": "Çılbır",
     "category": "Kahvaltı",
     "image": "https://image.hurimg.com/i/hurriyet/75/750x422/5ea009312269a218ac53a1a2.jpg",
@@ -70,6 +72,7 @@
     }
   },
   {
+    "id": 3,
     "name": "Makarna",
     "category": "Ana Yemek",
     "image": "https://d17wu0fn6x6rgz.cloudfront.net/img/w/tarif/mgt/viral_tek_tava_makarna_44_11zon.webp",
@@ -102,6 +105,7 @@
     }
   },
   {
+    "id": 4,
     "name": "Karnıyarık",
     "category": "Ana Yemek",
     "image": "https://esenler.bel.tr/wp-content/uploads/2022/03/karniyarik-1-960x720.jpg",
@@ -140,6 +144,46 @@
     }
   },
   {
+    "id": 5,
+    "name": "Karnıyarık",
+    "category": "Ana Yemek",
+    "image": "https://esenler.bel.tr/wp-content/uploads/2022/03/karniyarik-1-960x720.jpg",
+    "prep_time": "20 dakika",
+    "cook_time": "1 dakika",
+    "difficulty": "Orta",
+    "calories": 350,
+    "servings": 4,
+    "ingredients": [
+      {"name": "Patlıcan", "quantity": 4, "unit": "adet"},
+      {"name": "Kıyma", "quantity": 200, "unit": "gram"},
+      {"name": "Soğan", "quantity": 1, "unit": "adet"},
+      {"name": "Domates salçası", "quantity": 2, "unit": "yemek kaşığı"},
+      {"name": "Sarımsak", "quantity": 2, "unit": "diş"},
+      {"name": "Domates", "quantity": 2, "unit": "adet"},
+      {"name": "Yeşil biber", "quantity": 2, "unit": "adet"},
+      {"name": "Zeytinyağı", "quantity": 3, "unit": "yemek kaşığı"},
+      {"name": "Tuz", "quantity": 1, "unit": "çay kaşığı"},
+      {"name": "Karabiber", "quantity": 0.5, "unit": "çay kaşığı"}
+    ],
+    "instructions": [
+      "Fırını 180°C'ye (350°F) ısıtın.",
+      "Patlıcanları uzunlamasına ikiye kesin ve içini biraz oyun.",
+      "Bir tavada zeytinyağını ısıtın ve doğranmış soğan ve sarımsağı yumuşayana kadar soteleyin.",
+      "Kıymayı ekleyin ve kahverengileşene kadar pişirin.",
+      "Domates salçası, doğranmış domates ve yeşil biberleri ekleyin. 5 dakika daha pişirin.",
+      "Tuz ve karabiber ile tatlandırın.",
+      "Patlıcanları kıyma karışımı ile doldurun ve bir fırın tepsisine yerleştirin.",
+      "Önceden ısıtılmış fırında 40 dakika pişirin, patlıcanlar yumuşayana kadar.",
+      "Sıcak servis yapın."
+    ],
+    "nutrition": {
+      "carbohydrates": "20g",
+      "protein": "15g",
+      "fat": "25g"
+    }
+  },
+  {
+    "id": 6,
     "name": "Çılbır",
     "category": "Kahvaltı",
     "image": "https://image.hurimg.com/i/hurriyet/75/750x422/5ea009312269a218ac53a1a2.jpg",
@@ -172,6 +216,7 @@
     }
   },
   {
+    "id": 7,
     "name": "Makarna",
     "category": "Ana Yemek",
     "image": "https://d17wu0fn6x6rgz.cloudfront.net/img/w/tarif/mgt/viral_tek_tava_makarna_44_11zon.webp",
@@ -204,6 +249,7 @@
     }
   },
   {
+    "id": 8,
     "name": "Karnıyarık",
     "category": "Ana Yemek",
     "image": "https://esenler.bel.tr/wp-content/uploads/2022/03/karniyarik-1-960x720.jpg",
@@ -239,172 +285,6 @@
       "carbohydrates": "20g",
       "protein": "15g",
       "fat": "25g"
-    }
-  },
-  {
-    "name": "Çılbır",
-    "category": "Kahvaltı",
-    "image": "https://image.hurimg.com/i/hurriyet/75/750x422/5ea009312269a218ac53a1a2.jpg",
-    "prep_time": "10 dakika",
-    "cook_time": "10 dakika",
-    "difficulty": "Kolay",
-    "calories": 250,
-    "servings": 2,
-    "ingredients": [
-      {"name": "Yumurta", "quantity": 4, "unit": "adet"},
-      {"name": "Yoğurt", "quantity": 1, "unit": "kase"},
-      {"name": "Sarımsak", "quantity": 1, "unit": "diş"},
-      {"name": "Tuz", "quantity": 1, "unit": "çay kaşığı"},
-      {"name": "Karabiber", "quantity": 0.5, "unit": "çay kaşığı"},
-      {"name": "Kırmızı biber", "quantity": 1, "unit": "çay kaşığı"},
-      {"name": "Sıvı yağ", "quantity": 1, "unit": "yemek kaşığı"}
-    ],
-    "instructions": [
-      "Yumurta kaynatın ve suyun içinde poşe edin.",
-      "Yoğurdu bir kaba alın, üzerine ezilmiş sarımsak ekleyin ve karıştırın.",
-      "Tuz ve karabiber ekleyin.",
-      "Sıvı yağı tavada ısıtın ve kırmızı biberi ekleyin.",
-      "Poşe yumurtaları yoğurt üzerine yerleştirin ve kırmızı biberli yağı üzerine gezdirin.",
-      "Sıcak servis yapın."
-    ],
-    "nutrition": {
-      "carbohydrates": "15g",
-      "protein": "20g",
-      "fat": "15g"
-    }
-  },
-  {
-    "name": "Makarna",
-    "category": "Ana Yemek",
-    "image": "https://d17wu0fn6x6rgz.cloudfront.net/img/w/tarif/mgt/viral_tek_tava_makarna_44_11zon.webp",
-    "prep_time": "15 dakika",
-    "cook_time": "20 dakika",
-    "difficulty": "Kolay",
-    "calories": 400,
-    "servings": 4,
-    "ingredients": [
-      {"name": "Makarna", "quantity": 250, "unit": "gram"},
-      {"name": "Domates sosu", "quantity": 1, "unit": "kase"},
-      {"name": "Sarımsak", "quantity": 2, "unit": "diş"},
-      {"name": "Zeytinyağı", "quantity": 2, "unit": "yemek kaşığı"},
-      {"name": "Tuz", "quantity": 1, "unit": "çay kaşığı"},
-      {"name": "Karabiber", "quantity": 0.5, "unit": "çay kaşığı"},
-      {"name": "Rendelenmiş peynir", "quantity": 100, "unit": "gram"}
-    ],
-    "instructions": [
-      "Makarna paket talimatlarına göre haşlayın.",
-      "Bir tavada zeytinyağını ısıtın, doğranmış sarımsakları ekleyin ve hafifçe kavurun.",
-      "Domates sosunu ekleyin ve karıştırın.",
-      "Tuz ve karabiber ile tatlandırın.",
-      "Haşlanmış makarnayı sos ile karıştırın ve üzerine rendelenmiş peynir serpin.",
-      "Sıcak servis yapın."
-    ],
-    "nutrition": {
-      "carbohydrates": "60g",
-      "protein": "15g",
-      "fat": "20g"
-    }
-  },
-  {
-    "name": "Karnıyarık",
-    "category": "Ana Yemek",
-    "image": "https://esenler.bel.tr/wp-content/uploads/2022/03/karniyarik-1-960x720.jpg",
-    "prep_time": "20 dakika",
-    "cook_time": "40 dakika",
-    "difficulty": "Orta",
-    "calories": 350,
-    "servings": 4,
-    "ingredients": [
-      {"name": "Patlıcan", "quantity": 4, "unit": "adet"},
-      {"name": "Kıyma", "quantity": 200, "unit": "gram"},
-      {"name": "Soğan", "quantity": 1, "unit": "adet"},
-      {"name": "Domates salçası", "quantity": 2, "unit": "yemek kaşığı"},
-      {"name": "Sarımsak", "quantity": 2, "unit": "diş"},
-      {"name": "Domates", "quantity": 2, "unit": "adet"},
-      {"name": "Yeşil biber", "quantity": 2, "unit": "adet"},
-      {"name": "Zeytinyağı", "quantity": 3, "unit": "yemek kaşığı"},
-      {"name": "Tuz", "quantity": 1, "unit": "çay kaşığı"},
-      {"name": "Karabiber", "quantity": 0.5, "unit": "çay kaşığı"}
-    ],
-    "instructions": [
-      "Fırını 180°C'ye (350°F) ısıtın.",
-      "Patlıcanları uzunlamasına ikiye kesin ve içini biraz oyun.",
-      "Bir tavada zeytinyağını ısıtın ve doğranmış soğan ve sarımsağı yumuşayana kadar soteleyin.",
-      "Kıymayı ekleyin ve kahverengileşene kadar pişirin.",
-      "Domates salçası, doğranmış domates ve yeşil biberleri ekleyin. 5 dakika daha pişirin.",
-      "Tuz ve karabiber ile tatlandırın.",
-      "Patlıcanları kıyma karışımı ile doldurun ve bir fırın tepsisine yerleştirin.",
-      "Önceden ısıtılmış fırında 40 dakika pişirin, patlıcanlar yumuşayana kadar.",
-      "Sıcak servis yapın."
-    ],
-    "nutrition": {
-      "carbohydrates": "20g",
-      "protein": "15g",
-      "fat": "25g"
-    }
-  },
-  {
-    "name": "Çılbır",
-    "category": "Kahvaltı",
-    "image": "https://image.hurimg.com/i/hurriyet/75/750x422/5ea009312269a218ac53a1a2.jpg",
-    "prep_time": "10 dakika",
-    "cook_time": "10 dakika",
-    "difficulty": "Kolay",
-    "calories": 250,
-    "servings": 2,
-    "ingredients": [
-      {"name": "Yumurta", "quantity": 4, "unit": "adet"},
-      {"name": "Yoğurt", "quantity": 1, "unit": "kase"},
-      {"name": "Sarımsak", "quantity": 1, "unit": "diş"},
-      {"name": "Tuz", "quantity": 1, "unit": "çay kaşığı"},
-      {"name": "Karabiber", "quantity": 0.5, "unit": "çay kaşığı"},
-      {"name": "Kırmızı biber", "quantity": 1, "unit": "çay kaşığı"},
-      {"name": "Sıvı yağ", "quantity": 1, "unit": "yemek kaşığı"}
-    ],
-    "instructions": [
-      "Yumurta kaynatın ve suyun içinde poşe edin.",
-      "Yoğurdu bir kaba alın, üzerine ezilmiş sarımsak ekleyin ve karıştırın.",
-      "Tuz ve karabiber ekleyin.",
-      "Sıvı yağı tavada ısıtın ve kırmızı biberi ekleyin.",
-      "Poşe yumurtaları yoğurt üzerine yerleştirin ve kırmızı biberli yağı üzerine gezdirin.",
-      "Sıcak servis yapın."
-    ],
-    "nutrition": {
-      "carbohydrates": "15g",
-      "protein": "20g",
-      "fat": "15g"
-    }
-  },
-  {
-    "name": "Makarna",
-    "category": "Ana Yemek",
-    "image": "https://d17wu0fn6x6rgz.cloudfront.net/img/w/tarif/mgt/viral_tek_tava_makarna_44_11zon.webp",
-    "prep_time": "15 dakika",
-    "cook_time": "20 dakika",
-    "difficulty": "Kolay",
-    "calories": 400,
-    "servings": 4,
-    "ingredients": [
-      {"name": "Makarna", "quantity": 250, "unit": "gram"},
-      {"name": "Domates sosu", "quantity": 1, "unit": "kase"},
-      {"name": "Sarımsak", "quantity": 2, "unit": "diş"},
-      {"name": "Zeytinyağı", "quantity": 2, "unit": "yemek kaşığı"},
-      {"name": "Tuz", "quantity": 1, "unit": "çay kaşığı"},
-      {"name": "Karabiber", "quantity": 0.5, "unit": "çay kaşığı"},
-      {"name": "Rendelenmiş peynir", "quantity": 100, "unit": "gram"}
-    ],
-    "instructions": [
-      "Makarna paket talimatlarına göre haşlayın.",
-      "Bir tavada zeytinyağını ısıtın, doğranmış sarımsakları ekleyin ve hafifçe kavurun.",
-      "Domates sosunu ekleyin ve karıştırın.",
-      "Tuz ve karabiber ile tatlandırın.",
-      "Haşlanmış makarnayı sos ile karıştırın ve üzerine rendelenmiş peynir serpin.",
-      "Sıcak servis yapın."
-    ],
-    "nutrition": {
-      "carbohydrates": "60g",
-      "protein": "15g",
-      "fat": "20g"
     }
   }
 ]

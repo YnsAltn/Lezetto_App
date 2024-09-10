@@ -44,7 +44,7 @@ class _FavoritePageState extends State<FavoritePage> {
         Navigator.push(
           context,
           MaterialPageRoute(
-            builder: (context) => DetailPage(recipe: recipe),
+            builder: (context) => DetailPage(recipeId: recipe.id),
           ),
         );
       },
@@ -101,18 +101,63 @@ class _FavoritePageState extends State<FavoritePage> {
             IconButton(
               icon: Icon(Icons.favorite, color: Colors.red),
               onPressed: () {
-                setState(() {
-                  FavoritesManager.toggleFavorite(recipe);
-                });
-
-                ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-                  content: Text('${recipe.name} favorilerden kaldırıldı.'),
-                ));
+                _showRemoveFavoriteDialog(context, recipe);
               },
             ),
           ],
         ),
       ),
+    );
+  }
+
+  void _showRemoveFavoriteDialog(BuildContext context, Recipe recipe) {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: Text('Favorilerden Kaldır'),
+          content: Text('${recipe.name} favorilerden kaldırılacak. Emin misiniz?'),
+          actions: [
+            TextButton(
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+              child: Text('Hayır'),
+            ),
+            TextButton(
+              onPressed: () {
+                setState(() {
+                  FavoritesManager.toggleFavorite(recipe);
+                });
+
+                Navigator.of(context).pop();
+                _showRemovedNotification(recipe.name);
+              },
+              child: Text('Evet'),
+            ),
+          ],
+        );
+      },
+    );
+  }
+
+  void _showRemovedNotification(String recipeName) {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: Text('Favori Kaldırıldı'),
+          content: Text('$recipeName favorilerden kaldırıldı.'),
+          actions: [
+            TextButton(
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+              child: Text('Tamam'),
+            ),
+          ],
+        );
+      },
     );
   }
 }

@@ -24,7 +24,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
         color: Colors.black,
       ),
       centerTitle: true,
-      backgroundColor: Colors.grey[200],
+      backgroundColor: Colors.grey[300],
       elevation: 4.0,
     );
   }

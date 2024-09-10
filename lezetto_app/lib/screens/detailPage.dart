@@ -1,38 +1,56 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import '../components/appBar.dart';
 import '../components/sideBar.dart';
 import '../model/recipe_model.dart';
+import 'favorite_page/favorites_manager.dart';
 
 class DetailPage extends StatefulWidget {
-  final Recipe recipe;
+  final int recipeId;
 
-  DetailPage({required this.recipe});
+  DetailPage({required this.recipeId});
 
   @override
   _DetailPageState createState() => _DetailPageState();
 }
 
 class _DetailPageState extends State<DetailPage> {
+  late Recipe recipe;
   late int servings;
   late List<Ingredient> scaledIngredients;
 
   @override
   void initState() {
     super.initState();
-    servings = widget.recipe.servings;
-    scaledIngredients = widget.recipe.ingredients.map((ingredient) {
-      return Ingredient(
-        name: ingredient.name,
-        quantity: ingredient.quantity,
-        unit: ingredient.unit,
-      );
-    }).toList();
+    _loadRecipe();
+  }
+
+  Future<void> _loadRecipe() async {
+    final List<Recipe> recipes = await _fetchRecipes();
+    setState(() {
+      recipe = recipes.firstWhere((r) => r.id == widget.recipeId);
+      servings = recipe.servings;
+      scaledIngredients = recipe.ingredients.map((ingredient) {
+        return Ingredient(
+          name: ingredient.name,
+          quantity: ingredient.quantity,
+          unit: ingredient.unit,
+        );
+      }).toList();
+    });
+  }
+
+  Future<List<Recipe>> _fetchRecipes() async {
+    final String response = await DefaultAssetBundle.of(context).loadString('assets/karniyarik.json');
+    final List<dynamic> data = json.decode(response);
+    return data.map((item) => Recipe.fromJson(item)).toList();
   }
 
   void _updateIngredients(int newServings) {
     setState(() {
-      final double scale = newServings / widget.recipe.servings;
-      scaledIngredients = widget.recipe.ingredients.map((ingredient) {
+      final double scale = newServings / recipe.servings;
+      scaledIngredients = recipe.ingredients.map((ingredient) {
         return Ingredient(
           name: ingredient.name,
           quantity: ingredient.quantity * scale,
@@ -45,14 +63,21 @@ class _DetailPageState extends State<DetailPage> {
 
   @override
   Widget build(BuildContext context) {
-    final title = widget.recipe.name;
-    final imageUrl = widget.recipe.image;
-    final preparationTime = widget.recipe.prepTime;
-    final cookingTime = widget.recipe.cookTime;
-    final difficulty = widget.recipe.difficulty;
-    final calories = widget.recipe.calories;
-    final instructions = widget.recipe.instructions;
-    final nutrition = widget.recipe.nutrition;
+    if (recipe == null) {
+      return Scaffold(
+        appBar: CustomAppBar(),
+        drawer: SideBar(),
+        body: Center(child: CircularProgressIndicator()),
+      );
+    }
+
+    final imageUrl = recipe.image;
+    final preparationTime = recipe.prepTime;
+    final cookingTime = recipe.cookTime;
+    final difficulty = recipe.difficulty;
+    final calories = recipe.calories;
+    final instructions = recipe.instructions;
+    final nutrition = recipe.nutrition;
 
     return Scaffold(
       appBar: CustomAppBar(),
@@ -89,7 +114,7 @@ class _DetailPageState extends State<DetailPage> {
                 children: [
                   Center(
                     child: Text(
-                      title,
+                      recipe.name,
                       style: const TextStyle(
                         fontSize: 28.0,
                         fontWeight: FontWeight.bold,
@@ -108,39 +133,52 @@ class _DetailPageState extends State<DetailPage> {
                     ],
                   ),
                   SizedBox(height: 24.0),
-                  Container(
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        const Center(
-                          child: Text(
-                            'Besin Değerleri',
-                            style: TextStyle(
-                              fontSize: 22.0,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.deepOrange,
+                  Column(
+                    children: [
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          const Center(
+                            child: Text(
+                              'Besin Değerleri',
+                              style: TextStyle(
+                                fontSize: 22.0,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.deepOrange,
+                              ),
                             ),
                           ),
-                        ),
-                        Row(
-                          children: [
-                            IconButton(
-                              icon: Icon(Icons.favorite_border, color: Colors.deepOrange),
-                              onPressed: () {
-                              },
-                            ),
-                            SizedBox(width: 8.0),
-                            IconButton(
-                              icon: Icon(Icons.share, color: Colors.deepOrange),
-                              onPressed: () {
-                              },
-                            ),
-                          ],
-                        ),
-                      ],
-                    ),
+                          Column(
+                            children: [
+                              Row(
+                                children: [
+                                  IconButton(
+                                    icon: Icon(
+                                      FavoritesManager.isFavorite(recipe) ? Icons.favorite : Icons.favorite_border,
+                                      color: Colors.deepOrange,
+                                      size: 30,
+                                    ),
+                                    onPressed: () {
+                                      setState(() {
+                                        FavoritesManager.toggleFavorite(recipe);
+                                      });
+                                    },
+                                  ),
+                                  SizedBox(width: 8.0),
+                                  IconButton(
+                                    icon: Icon(Icons.share, color: Colors.deepOrange, size: 30),
+                                    onPressed: () {
+                                    },
+                                  ),
+                                ],
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+                    ],
                   ),
-                  SizedBox(height: 8.0),
+                  SizedBox(height: 2.0),
                   Text(
                     'Karbonhidrat: ${nutrition.carbohydrates}',
                     style: TextStyle(fontSize: 16.0),
@@ -170,10 +208,10 @@ class _DetailPageState extends State<DetailPage> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       IconButton(
-                        icon: Icon(Icons.remove,color: Colors.deepOrange,),
+                        icon: Icon(Icons.remove, color: Colors.deepOrange),
                         onPressed: () {
                           if (servings > 1) {
-                            _updateIngredients(servings - 1); // Kişilik azaltma
+                            _updateIngredients(servings - 1);
                           }
                         },
                       ),
@@ -182,9 +220,9 @@ class _DetailPageState extends State<DetailPage> {
                         style: TextStyle(fontSize: 18.0),
                       ),
                       IconButton(
-                        icon: Icon(Icons.add,color: Colors.deepOrange,),
+                        icon: Icon(Icons.add, color: Colors.deepOrange),
                         onPressed: () {
-                          _updateIngredients(servings + 1); // Kişilik artırma
+                          _updateIngredients(servings + 1);
                         },
                       ),
                     ],
@@ -212,7 +250,8 @@ class _DetailPageState extends State<DetailPage> {
                                     TextSpan(
                                         text: '${ingredient.unit} ${ingredient.name}',
                                         style: const TextStyle(
-                                            fontWeight: FontWeight.normal)),                                  ],
+                                            fontWeight: FontWeight.normal)),
+                                  ],
                                 ),
                               ),
                             ),

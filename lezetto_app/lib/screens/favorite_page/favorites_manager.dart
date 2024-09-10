@@ -12,7 +12,7 @@ class FavoritesManager {
   }
 
   static List<Recipe> getFavorites() {
-    return _favorites;
+    return List.unmodifiable(_favorites);
   }
 
   static void toggleFavorite(Recipe recipe) {

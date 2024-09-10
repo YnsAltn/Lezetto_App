@@ -10,7 +10,7 @@ class BottomNavBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       height: 70,
-      color: Colors.grey[200],
+      color: Colors.grey[300],
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: List.generate(5, (index) {
@@ -23,7 +23,7 @@ class BottomNavBar extends StatelessWidget {
               height: 50,
               margin: const EdgeInsets.symmetric(vertical: 10.0, horizontal: 2.0),
               decoration: BoxDecoration(
-                color: isSelected ? Colors.grey[800] : Colors.grey[300],
+                color: isSelected ? Colors.grey[800] : Colors.grey[400],
                 borderRadius: BorderRadius.circular(25),
               ),
               child: Row(

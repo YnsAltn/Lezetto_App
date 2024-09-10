@@ -3,6 +3,7 @@ import 'package:flutter_demo/screens/main_template.dart';
 
 void main() {
   runApp(MaterialApp(
+    debugShowCheckedModeBanner: false,
     home: MainTemplate(),
   ));
 }

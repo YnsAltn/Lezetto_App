@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
-class ShoppingPage extends StatelessWidget {
+class CartPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(child: Text('Alışveriş Sayfası')),
+      body: Center(child: Text('Alışveriş Listesi Sayfası')),
 
     );
   }

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_demo/screens/favorite_page/favorite_page.dart';
 import 'package:flutter_demo/screens/kitchen_page.dart';
 import 'package:flutter_demo/screens/search_page.dart';
-import 'package:flutter_demo/screens/shopping_page.dart';
+import 'package:flutter_demo/screens/shopping_page/shopping_page.dart';
 import '../components/appBar.dart';
 import '../components/bottomNavBar.dart';
 import '../components/sideBar.dart';
@@ -21,7 +21,7 @@ class _MainTemplateState extends State<MainTemplate> {
     KitchenPage(),
     SearchPage(),
     FavoritePage(),
-    ShoppingPage(),
+    CartPage(),
   ];
 
   void _onItemTapped(int index) {

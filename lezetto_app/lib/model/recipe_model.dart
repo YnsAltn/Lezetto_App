@@ -1,4 +1,5 @@
 class Recipe {
+  final int id;
   final String name;
   final String category;
   final String image;
@@ -12,6 +13,7 @@ class Recipe {
   final Nutrition nutrition;
 
   Recipe({
+    required this.id,
     required this.name,
     required this.category,
     required this.image,
@@ -35,6 +37,7 @@ class Recipe {
     var nutritionData = Nutrition.fromJson(json['nutrition']);
 
     return Recipe(
+      id: (json['id'] as num).toInt(),
       name: json['name'],
       category: json['category'],
       image: json['image'],
@@ -49,6 +52,7 @@ class Recipe {
     );
   }
 }
+
 class Ingredient {
   final String name;
   final double quantity;
