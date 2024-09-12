@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_demo/screens/favorite_page/favorite_page.dart';
 import 'package:flutter_demo/screens/kitchen_page.dart';
-import 'package:flutter_demo/screens/search_page.dart';
+import 'package:flutter_demo/screens/search_page/search_page.dart';
 import 'package:flutter_demo/screens/shopping_page/shopping_page.dart';
 import '../components/appBar.dart';
 import '../components/bottomNavBar.dart';
 import '../components/sideBar.dart';
-import 'home_page.dart';
+import 'home_page/home_page.dart';
 
 class MainTemplate extends StatefulWidget {
   @override
@@ -21,7 +21,7 @@ class _MainTemplateState extends State<MainTemplate> {
     KitchenPage(),
     SearchPage(),
     FavoritePage(),
-    CartPage(),
+    ShoppingCartPage(),
   ];
 
   void _onItemTapped(int index) {

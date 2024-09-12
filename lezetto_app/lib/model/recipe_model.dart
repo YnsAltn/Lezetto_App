@@ -11,6 +11,7 @@ class Recipe {
   final List<Ingredient> ingredients;
   final List<String> instructions;
   final Nutrition nutrition;
+  bool isFavorite;  // Favori durumu ekleniyor
 
   Recipe({
     required this.id,
@@ -25,6 +26,7 @@ class Recipe {
     required this.ingredients,
     required this.instructions,
     required this.nutrition,
+    this.isFavorite = false,  // Varsayılan olarak favori değil
   });
 
   factory Recipe.fromJson(Map<String, dynamic> json) {
@@ -49,6 +51,7 @@ class Recipe {
       ingredients: ingredientList,
       instructions: instructionList,
       nutrition: nutritionData,
+      isFavorite: json['is_favorite'] ?? false,  // Favori bilgisi varsa kullanılır
     );
   }
 }
@@ -90,5 +93,13 @@ class Nutrition {
       protein: json['protein'],
       fat: json['fat'],
     );
+  }
+
+  Map<String, String> toMap() {
+    return {
+      'Karbonhidrat': carbohydrates,
+      'Protein': protein,
+      'Yağ': fat,
+    };
   }
 }

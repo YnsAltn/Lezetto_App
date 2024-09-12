@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import '../../components/bottomNavBar.dart';
 import '../../model/recipe_model.dart';
-import '../detailPage.dart';
+import '../detail_page/detailPage.dart';
 import 'favorites_manager.dart';
 
 class FavoritePage extends StatefulWidget {
