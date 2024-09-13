@@ -11,7 +11,7 @@ class Recipe {
   final List<Ingredient> ingredients;
   final List<String> instructions;
   final Nutrition nutrition;
-  bool isFavorite;  // Favori durumu ekleniyor
+  bool isFavorite;
 
   Recipe({
     required this.id,
@@ -26,7 +26,7 @@ class Recipe {
     required this.ingredients,
     required this.instructions,
     required this.nutrition,
-    this.isFavorite = false,  // Varsayılan olarak favori değil
+    this.isFavorite = false,
   });
 
   factory Recipe.fromJson(Map<String, dynamic> json) {
@@ -51,7 +51,7 @@ class Recipe {
       ingredients: ingredientList,
       instructions: instructionList,
       nutrition: nutritionData,
-      isFavorite: json['is_favorite'] ?? false,  // Favori bilgisi varsa kullanılır
+      isFavorite: json['is_favorite'] ?? false,
     );
   }
 }
@@ -80,11 +80,21 @@ class Nutrition {
   final String carbohydrates;
   final String protein;
   final String fat;
+  final String calcium;
+  final String iron;
+  final String magnesium;
+  final String potassium;
+  final String zinc;
 
   Nutrition({
     required this.carbohydrates,
     required this.protein,
     required this.fat,
+    required this.calcium,
+    required this.iron,
+    required this.magnesium,
+    required this.potassium,
+    required this.zinc,
   });
 
   factory Nutrition.fromJson(Map<String, dynamic> json) {
@@ -92,6 +102,11 @@ class Nutrition {
       carbohydrates: json['carbohydrates'],
       protein: json['protein'],
       fat: json['fat'],
+      calcium: json['calcium'],
+      iron: json['iron'],
+      magnesium: json['magnesium'],
+      potassium: json['potassium'],
+      zinc: json['zinc'],
     );
   }
 
@@ -100,6 +115,11 @@ class Nutrition {
       'Karbonhidrat': carbohydrates,
       'Protein': protein,
       'Yağ': fat,
+      'Kalsiyum': calcium,
+      'Demir':iron,
+      'Magnezyum': magnesium,
+      'Potasyum': potassium,
+      'Çinko': zinc
     };
   }
 }

@@ -5,7 +5,6 @@ import 'package:flutter_demo/model/recipe_model.dart';
 import 'package:flutter_demo/screens/home_page/recipe_card.dart';
 import 'package:flutter_demo/screens/home_page/recipe_slider.dart';
 
-
 class HomePage extends StatefulWidget {
   @override
   _HomePageState createState() => _HomePageState();
@@ -50,6 +49,9 @@ class _HomePageState extends State<HomePage> {
                     child: RecipeSlider(recipes: recipes),
                   ),
                 ),
+                SliverToBoxAdapter(
+                  child: SizedBox(height: 10.0),
+                ),
                 SliverGrid(
                   delegate: SliverChildBuilderDelegate(
                         (BuildContext context, int index) {
@@ -58,12 +60,15 @@ class _HomePageState extends State<HomePage> {
                     },
                     childCount: recipes.length,
                   ),
-                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 2,
                     crossAxisSpacing: 6.0,
                     mainAxisSpacing: 10.0,
                     childAspectRatio: 0.8,
                   ),
+                ),
+                const SliverToBoxAdapter(
+                  child: SizedBox(height: 10.0),
                 ),
               ],
             ),

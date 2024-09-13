@@ -20,6 +20,7 @@ class DetailPage extends StatefulWidget {
 
 class _DetailPageState extends State<DetailPage> {
   late DetailPageManager _manager;
+  final ScrollController _scrollController = ScrollController();  // ScrollController eklendi
 
   @override
   void initState() {
@@ -41,41 +42,48 @@ class _DetailPageState extends State<DetailPage> {
     return Scaffold(
       appBar: CustomAppBar(),
       drawer: SideBar(),
-      body: SingleChildScrollView(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            _buildRecipeImage(),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16.0),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Center(
-                    child: Text(
-                      _manager.recipe!.name,
-                      style: const TextStyle(
-                        fontSize: 28.0,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.deepOrange,
+      body: RawScrollbar(  // RawScrollbar kullanıldı
+        controller: _scrollController,
+        thumbVisibility: true,  // Scrollbar her zaman görünür
+        radius: Radius.circular(10),  // Thumb yuvarlak köşeli olacak
+        thickness: 8.0,  // Thumb kalınlığı
+        thumbColor: Colors.deepOrange,  // Scrollbar rengi
+        child: SingleChildScrollView(
+          controller: _scrollController,  // ScrollController ile scroll ayarı
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              _buildRecipeImage(),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 0.0),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Center(
+                      child: Text(
+                        _manager.recipe!.name,
+                        style: const TextStyle(
+                          fontSize: 28.0,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.deepOrange,
+                        ),
                       ),
                     ),
-                  ),
-                  SizedBox(height: 16.0),
-                  _buildInfoSection(),
-                  SizedBox(height: 24.0),
-                  NutritionInfo(manager: _manager),
-                  SizedBox(height: 24.0),
-                  SizedBox(height: 20.0),
-                  _buildServingsControl(),
-                  IngredientList(manager: _manager),
-                  SizedBox(height: 20.0),
-                  RecipeInstructions(manager: _manager),
-                  SizedBox(height: 20.0),
-                ],
+                    SizedBox(height: 15.0),
+                    _buildInfoSection(),
+                    SizedBox(height: 15.0),
+                    NutritionInfo(manager: _manager),
+                    SizedBox(height: 15.0),
+                    _buildServingsControl(),
+                    IngredientList(manager: _manager),
+                    SizedBox(height: 15.0),
+                    RecipeInstructions(manager: _manager),
+                    SizedBox(height: 15.0),
+                  ],
+                ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
       bottomNavigationBar: CustomNavbar(
@@ -83,8 +91,10 @@ class _DetailPageState extends State<DetailPage> {
           Navigator.pop(context);
         },
         onSavePressed: () {
+          // Favori butonu
         },
         onRatePressed: () {
+          // Oylama butonu
         },
         onSharePressed: () {
           Share.share(_manager.recipe!.name);
@@ -144,8 +154,7 @@ class _DetailPageState extends State<DetailPage> {
             ),
           ),
         ),
-        SizedBox(height: 20.0), // Başlık ile "Kişilik" kısmı arasına boşluk ekleyin
-        // Kişilik kontrolü
+        SizedBox(height: 10.0),
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [

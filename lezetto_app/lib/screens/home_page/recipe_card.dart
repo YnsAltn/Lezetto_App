@@ -27,7 +27,7 @@ class _RecipeCardState extends State<RecipeCard> {
         );
       },
       child: Card(
-        elevation: 8.0,
+        elevation: 20.0,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(15.0),
         ),
@@ -50,7 +50,7 @@ class _RecipeCardState extends State<RecipeCard> {
               padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 4.0),
               child: _buildRecipeTime(),
             ),
-            SizedBox(height: 4.0),
+            SizedBox(height: 5.0),
           ],
         ),
       ),

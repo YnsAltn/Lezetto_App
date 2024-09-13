@@ -35,7 +35,12 @@
     "nutrition": {
       "carbohydrates": "20g",
       "protein": "15g",
-      "fat": "25g"
+      "fat": "25g",
+      "calcium": "100mg",
+      "iron": "2mg",
+      "magnesium": "50mg",
+      "potassium": "300mg",
+      "zinc": "1mg"
     }
   },
   {
@@ -68,7 +73,12 @@
     "nutrition": {
       "carbohydrates": "15g",
       "protein": "20g",
-      "fat": "15g"
+      "fat": "15g",
+      "calcium": "100mg",
+      "iron": "2mg",
+      "magnesium": "50mg",
+      "potassium": "300mg",
+      "zinc": "1mg"
     }
   },
   {
@@ -101,7 +111,12 @@
     "nutrition": {
       "carbohydrates": "60g",
       "protein": "15g",
-      "fat": "20g"
+      "fat": "20g",
+      "calcium": "100mg",
+      "iron": "2mg",
+      "magnesium": "50mg",
+      "potassium": "300mg",
+      "zinc": "1mg"
     }
   },
   {
@@ -140,7 +155,12 @@
     "nutrition": {
       "carbohydrates": "20g",
       "protein": "15g",
-      "fat": "25g"
+      "fat": "25g",
+      "calcium": "100mg",
+      "iron": "2mg",
+      "magnesium": "50mg",
+      "potassium": "300mg",
+      "zinc": "1mg"
     }
   },
   {
@@ -179,7 +199,12 @@
     "nutrition": {
       "carbohydrates": "20g",
       "protein": "15g",
-      "fat": "25g"
+      "fat": "25g",
+      "calcium": "100mg",
+      "iron": "2mg",
+      "magnesium": "50mg",
+      "potassium": "300mg",
+      "zinc": "1mg"
     }
   },
   {
@@ -212,7 +237,12 @@
     "nutrition": {
       "carbohydrates": "15g",
       "protein": "20g",
-      "fat": "15g"
+      "fat": "15g",
+      "calcium": "100mg",
+      "iron": "2mg",
+      "magnesium": "50mg",
+      "potassium": "300mg",
+      "zinc": "1mg"        
     }
   },
   {
@@ -245,7 +275,12 @@
     "nutrition": {
       "carbohydrates": "60g",
       "protein": "15g",
-      "fat": "20g"
+      "fat": "20g",
+      "calcium": "100mg",
+      "iron": "2mg",
+      "magnesium": "50mg", 
+      "potassium": "300mg",
+      "zinc": "1mg"
     }
   },
   {
@@ -284,7 +319,12 @@
     "nutrition": {
       "carbohydrates": "20g",
       "protein": "15g",
-      "fat": "25g"
+      "fat": "25g",
+      "calcium": "100mg",
+      "iron": "2mg",
+      "magnesium": "50mg",
+      "potassium": "300mg",
+      "zinc": "1mg"
     }
   }
 ]

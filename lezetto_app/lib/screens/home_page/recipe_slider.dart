@@ -29,7 +29,7 @@ class _RecipeSliderState extends State<RecipeSlider> {
           child: Stack(
             children: [
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 10.0),
+                padding: const EdgeInsets.symmetric(horizontal: 5.0),
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(15.0),
                   child: Container(
@@ -50,7 +50,7 @@ class _RecipeSliderState extends State<RecipeSlider> {
                 ),
               ),
               Positioned(
-                bottom: 10.0,
+                bottom: 5.0,
                 left: 0.0,
                 right: 0.0,
                 child: Center(

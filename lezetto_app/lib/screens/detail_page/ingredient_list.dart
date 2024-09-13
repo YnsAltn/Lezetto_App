@@ -13,7 +13,6 @@ class IngredientList extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
 
-        SizedBox(height: 10.0),
         ListView.builder(
           shrinkWrap: true,
           physics: NeverScrollableScrollPhysics(),
@@ -27,7 +26,7 @@ class IngredientList extends StatelessWidget {
               children: [
                 Padding(
                   padding: const EdgeInsets.symmetric(
-                      horizontal: 10.0, vertical: 5.0),
+                      horizontal: 5.0, vertical: 1.0),
                   child: Row(
                     children: [
                       IconButton(
@@ -41,7 +40,7 @@ class IngredientList extends StatelessWidget {
                         child: Text(
                           '${ingredient.quantity} ${ingredient.unit} ${ingredient.name}',
                           style: TextStyle(
-                            fontSize: 20.0,
+                            fontSize: 18.0,
                             fontWeight: FontWeight.w500,
                           ),
                         ),
