@@ -20,7 +20,7 @@ class DetailPage extends StatefulWidget {
 
 class _DetailPageState extends State<DetailPage> {
   late DetailPageManager _manager;
-  final ScrollController _scrollController = ScrollController();  // ScrollController eklendi
+  final ScrollController _scrollController = ScrollController();
 
   @override
   void initState() {
